@@ -1,0 +1,757 @@
+                Release 14.7 - xst P.20131013 (nt)
+                Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+                --> Parameter TMPDIR set to xst/projnav.tmp
+
+
+                Total REAL time to Xst completion: 0.00 secs
+                Total CPU time to Xst completion: 0.08 secs
+                 
+                --> Parameter xsthdpdir set to xst
+
+
+                Total REAL time to Xst completion: 0.00 secs
+                Total CPU time to Xst completion: 0.08 secs
+                 
+                --> Reading design: AXI_slave.prj
+
+                TABLE OF CONTENTS
+                  1) Synthesis Options Summary
+                  2) HDL Compilation
+                  3) Design Hierarchy Analysis
+                  4) HDL Analysis
+                  5) HDL Synthesis
+                     5.1) HDL Synthesis Report
+                  6) Advanced HDL Synthesis
+                     6.1) Advanced HDL Synthesis Report
+                  7) Low Level Synthesis
+                  8) Partition Report
+                  9) Final Report
+                	9.1) Device utilization summary
+                	9.2) Partition Resource Summary
+                	9.3) TIMING REPORT
+
+
+                =========================================================================
+                *                      Synthesis Options Summary                        *
+                =========================================================================
+                ---- Source Parameters
+                Input File Name                    : "AXI_slave.prj"
+                Input Format                       : mixed
+                Ignore Synthesis Constraint File   : NO
+
+                ---- Target Parameters
+                Output File Name                   : "AXI_slave"
+                Output Format                      : NGC
+                Target Device                      : xc4vlx25-10-ff668
+
+                ---- Source Options
+                Top Module Name                    : AXI_slave
+                Automatic FSM Extraction           : YES
+                FSM Encoding Algorithm             : Auto
+                Safe Implementation                : No
+                FSM Style                          : LUT
+                RAM Extraction                     : Yes
+                RAM Style                          : Auto
+                ROM Extraction                     : Yes
+                Mux Style                          : Auto
+                Decoder Extraction                 : YES
+                Priority Encoder Extraction        : Yes
+                Shift Register Extraction          : YES
+                Logical Shifter Extraction         : YES
+                XOR Collapsing                     : YES
+                ROM Style                          : Auto
+                Mux Extraction                     : Yes
+                Resource Sharing                   : YES
+                Asynchronous To Synchronous        : NO
+                Use DSP Block                      : Auto
+                Automatic Register Balancing       : No
+
+                ---- Target Options
+                Add IO Buffers                     : YES
+                Global Maximum Fanout              : 500
+                Add Generic Clock Buffer(BUFG)     : 32
+                Number of Regional Clock Buffers   : 24
+                Register Duplication               : YES
+                Slice Packing                      : YES
+                Optimize Instantiated Primitives   : NO
+                Use Clock Enable                   : Auto
+                Use Synchronous Set                : Auto
+                Use Synchronous Reset              : Auto
+                Pack IO Registers into IOBs        : Auto
+                Equivalent register Removal        : YES
+
+                ---- General Options
+                Optimization Goal                  : Speed
+                Optimization Effort                : 1
+                Power Reduction                    : NO
+                Keep Hierarchy                     : No
+                Netlist Hierarchy                  : As_Optimized
+                RTL Output                         : Yes
+                Global Optimization                : AllClockNets
+                Read Cores                         : YES
+                Write Timing Constraints           : NO
+                Cross Clock Analysis               : NO
+                Hierarchy Separator                : /
+                Bus Delimiter                      : <>
+                Case Specifier                     : Maintain
+                Slice Utilization Ratio            : 100
+                BRAM Utilization Ratio             : 100
+                DSP48 Utilization Ratio            : 100
+                Verilog 2001                       : YES
+                Auto BRAM Packing                  : NO
+                Slice Utilization Ratio Delta      : 5
+
+                =========================================================================
+
+
+                =========================================================================
+                *                          HDL Compilation                              *
+                =========================================================================
+                Compiling verilog file "../../../AXI_slave.v" in library work
+                Module <AXI_slave> compiled
+                No errors in compilation
+                Analysis of file <"AXI_slave.prj"> succeeded.
+                 
+
+                =========================================================================
+                *                     Design Hierarchy Analysis                         *
+                =========================================================================
+                Analyzing hierarchy for module <AXI_slave> in library <work> with parameters.
+                	AR_IDLE_S = "00"
+                	AR_READY_S = "01"
+                	AR_TRAN_S = "10"
+                	B_IDLE_S = "00"
+                	B_READY_S = "10"
+                	B_START_S = "01"
+                	R_IDLE_S = "00"
+                	R_START_S = "01"
+                	R_VALID_S = "10"
+                	WA_IDLE_S = "00"
+                	WA_READY_S = "10"
+                	WA_START_S = "01"
+                	W_IDLE_S = "00"
+                	W_START_S = "01"
+                	W_TRAN_S = "11"
+                	W_WAIT_S = "10"
+
+
+                =========================================================================
+                *                            HDL Analysis                               *
+                =========================================================================
+                Analyzing top module <AXI_slave>.
+                	AR_IDLE_S = 2'b00
+                	AR_READY_S = 2'b01
+                	AR_TRAN_S = 2'b10
+                	B_IDLE_S = 2'b00
+                	B_READY_S = 2'b10
+                	B_START_S = 2'b01
+                	R_IDLE_S = 2'b00
+                	R_START_S = 2'b01
+                	R_VALID_S = 2'b10
+                	WA_IDLE_S = 2'b00
+                	WA_READY_S = 2'b10
+                	WA_START_S = 2'b01
+                	W_IDLE_S = 2'b00
+                	W_START_S = 2'b01
+                	W_TRAN_S = 2'b11
+                	W_WAIT_S = 2'b10
+                INFO:Xst:1607 - Contents of array <slave_mem> may be accessed with an index that does not cover the full array size.
+                Module <AXI_slave> is correct for synthesis.
+                 
+
+                =========================================================================
+                *                           HDL Synthesis                               *
+                =========================================================================
+
+                Performing bidirectional port resolution...
+
+                Synthesizing Unit <AXI_slave>.
+                    Related source file is "../../../AXI_slave.v".
+                WARNING:Xst:646 - Signal <ARADDR_reg<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+                INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WState_S> of Case statement line 111 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+                   	- add an 'INIT' attribute on signal <WState_S> (optimization is then done without any risk)
+                   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+                   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+                    Found finite state machine <FSM_0> for signal <WAState_S>.
+                    -----------------------------------------------------------------------
+                    | States             | 3                                              |
+                    | Transitions        | 4                                              |
+                    | Inputs             | 1                                              |
+                    | Outputs            | 1                                              |
+                    | Clock              | ACLK                      (rising_edge)        |
+                    | Reset              | ARESETn                   (negative)           |
+                    | Reset type         | asynchronous                                   |
+                    | Reset State        | 00                                             |
+                    | Encoding           | automatic                                      |
+                    | Implementation     | LUT                                            |
+                    -----------------------------------------------------------------------
+                    Found finite state machine <FSM_1> for signal <WState_S>.
+                    -----------------------------------------------------------------------
+                    | States             | 4                                              |
+                    | Transitions        | 6                                              |
+                    | Inputs             | 2                                              |
+                    | Outputs            | 1                                              |
+                    | Clock              | ACLK                      (rising_edge)        |
+                    | Reset              | ARESETn                   (negative)           |
+                    | Reset type         | asynchronous                                   |
+                    | Reset State        | 00                                             |
+                    | Encoding           | automatic                                      |
+                    | Implementation     | LUT                                            |
+                    -----------------------------------------------------------------------
+                    Found finite state machine <FSM_2> for signal <BState_S>.
+                    -----------------------------------------------------------------------
+                    | States             | 3                                              |
+                    | Transitions        | 5                                              |
+                    | Inputs             | 2                                              |
+                    | Outputs            | 3                                              |
+                    | Clock              | ACLK                      (rising_edge)        |
+                    | Reset              | ARESETn                   (negative)           |
+                    | Reset type         | asynchronous                                   |
+                    | Reset State        | 00                                             |
+                    | Encoding           | automatic                                      |
+                    | Implementation     | LUT                                            |
+                    -----------------------------------------------------------------------
+                    Found finite state machine <FSM_3> for signal <ARState_S>.
+                    -----------------------------------------------------------------------
+                    | States             | 3                                              |
+                    | Transitions        | 4                                              |
+                    | Inputs             | 1                                              |
+                    | Outputs            | 1                                              |
+                    | Clock              | ACLK                      (rising_edge)        |
+                    | Reset              | ARESETn                   (negative)           |
+                    | Reset type         | asynchronous                                   |
+                    | Reset State        | 00                                             |
+                    | Encoding           | automatic                                      |
+                    | Implementation     | LUT                                            |
+                    -----------------------------------------------------------------------
+                    Found finite state machine <FSM_4> for signal <RState_S>.
+                    -----------------------------------------------------------------------
+                    | States             | 3                                              |
+                    | Transitions        | 6                                              |
+                    | Inputs             | 3                                              |
+                    | Outputs            | 1                                              |
+                    | Clock              | ACLK                      (rising_edge)        |
+                    | Reset              | ARESETn                   (negative)           |
+                    | Reset type         | asynchronous                                   |
+                    | Reset State        | 00                                             |
+                    | Encoding           | automatic                                      |
+                    | Implementation     | LUT                                            |
+                    -----------------------------------------------------------------------
+                    Found 1-bit register for signal <ARREADY>.
+                    Found 1-bit register for signal <AWREADY>.
+                    Found 2-bit register for signal <BRESP>.
+                    Found 1-bit register for signal <BVALID>.
+                    Found 8-bit register for signal <RDATA>.
+                    Found 1-bit register for signal <RVALID>.
+                    Found 1-bit register for signal <WREADY>.
+                    Found 8-bit 16-to-1 multiplexer for signal <$varindex0000> created at line 375.
+                    Found 32-bit register for signal <ARADDR_reg>.
+                    Found 32-bit register for signal <AWADDR_reg>.
+                    Found 128-bit register for signal <slave_mem>.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_0$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_1$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_10$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0001> created at line 164.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0002> created at line 169.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0003> created at line 174.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0004> created at line 179.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0005> created at line 184.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0006> created at line 189.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0007> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0008> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0009> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0010> created at line 213.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_11$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0001> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0002> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0003> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0004> created at line 213.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0005> created at line 220.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_12$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_13$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_14$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0001> created at line 164.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0002> created at line 169.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0003> created at line 174.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0004> created at line 179.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0005> created at line 184.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0006> created at line 189.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0007> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0008> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0009> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0010> created at line 213.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_15$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0001> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0002> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0003> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0004> created at line 213.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0005> created at line 220.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_2$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0002> created at line 164.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0003> created at line 169.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0004> created at line 174.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0005> created at line 179.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0006> created at line 184.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0007> created at line 189.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0008> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0009> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0010> created at line 213.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_3$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0001> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0002> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0003> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0004> created at line 213.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0005> created at line 220.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_4$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_5$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_6$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0001> created at line 164.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0002> created at line 169.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0003> created at line 174.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0004> created at line 179.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0005> created at line 184.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0006> created at line 189.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0007> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0008> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0009> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0010> created at line 213.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_7$mux0000> created at line 144.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0001> created at line 195.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0002> created at line 201.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0003> created at line 207.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0004> created at line 213.
+                    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0005> created at line 220.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_8$mux0000> created at line 144.
+                    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_9$mux0000> created at line 144.
+                    Summary:
+                	inferred   5 Finite State Machine(s).
+                	inferred 207 D-type flip-flop(s).
+                	inferred 608 Multiplexer(s).
+                Unit <AXI_slave> synthesized.
+
+
+                =========================================================================
+                HDL Synthesis Report
+
+                Macro Statistics
+                # Registers                                            : 25
+                 1-bit register                                        : 5
+                 2-bit register                                        : 1
+                 32-bit register                                       : 2
+                 8-bit register                                        : 17
+                # Multiplexers                                         : 76
+                 8-bit 16-to-1 multiplexer                             : 17
+                 8-bit 4-to-1 multiplexer                              : 59
+
+                =========================================================================
+
+                =========================================================================
+                *                       Advanced HDL Synthesis                          *
+                =========================================================================
+
+                Analyzing FSM <FSM_4> for best encoding.
+                Optimizing FSM <RState_S/FSM> on signal <RState_S[1:2]> with user encoding.
+                -------------------
+                 State | Encoding
+                -------------------
+                 00    | 00
+                 01    | 01
+                 10    | 10
+                -------------------
+                Analyzing FSM <FSM_3> for best encoding.
+                Optimizing FSM <ARState_S/FSM> on signal <ARState_S[1:2]> with user encoding.
+                -------------------
+                 State | Encoding
+                -------------------
+                 00    | 00
+                 01    | 01
+                 10    | 10
+                -------------------
+                Analyzing FSM <FSM_2> for best encoding.
+                Optimizing FSM <BState_S/FSM> on signal <BState_S[1:2]> with user encoding.
+                -------------------
+                 State | Encoding
+                -------------------
+                 00    | 00
+                 01    | 01
+                 10    | 10
+                -------------------
+                Analyzing FSM <FSM_1> for best encoding.
+                Optimizing FSM <WState_S/FSM> on signal <WState_S[1:2]> with gray encoding.
+                -------------------
+                 State | Encoding
+                -------------------
+                 00    | 00
+                 01    | 01
+                 10    | 11
+                 11    | 10
+                -------------------
+                Analyzing FSM <FSM_0> for best encoding.
+                Optimizing FSM <WAState_S/FSM> on signal <WAState_S[1:2]> with user encoding.
+                -------------------
+                 State | Encoding
+                -------------------
+                 00    | 00
+                 01    | 01
+                 10    | 10
+                -------------------
+                WARNING:Xst:1710 - FF/Latch <BRESP_1> (without init value) has a constant value of 0 in block <AXI_slave>. This FF/Latch will be trimmed during the optimization process.
+                WARNING:Xst:2677 - Node <AWADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <AWADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+                WARNING:Xst:2677 - Node <ARADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+
+                =========================================================================
+                Advanced HDL Synthesis Report
+
+                Macro Statistics
+                # FSMs                                                 : 5
+                # Registers                                            : 151
+                 Flip-Flops                                            : 151
+                # Multiplexers                                         : 76
+                 8-bit 16-to-1 multiplexer                             : 17
+                 8-bit 4-to-1 multiplexer                              : 59
+
+                =========================================================================
+
+                =========================================================================
+                *                         Low Level Synthesis                           *
+                =========================================================================
+                INFO:Xst:2261 - The FF/Latch <ARREADY> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <ARState_S_FSM_FFd2> 
+                INFO:Xst:2261 - The FF/Latch <BVALID> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <BState_S_FSM_FFd2> 
+                INFO:Xst:2261 - The FF/Latch <BRESP_0> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <BState_S_FSM_FFd1> 
+                INFO:Xst:2261 - The FF/Latch <AWREADY> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <WAState_S_FSM_FFd2> 
+                INFO:Xst:2261 - The FF/Latch <RVALID> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <RState_S_FSM_FFd1> 
+                WARNING:Xst:1710 - FF/Latch <BRESP_1> (without init value) has a constant value of 0 in block <AXI_slave>. This FF/Latch will be trimmed during the optimization process.
+
+                Optimizing unit <AXI_slave> ...
+
+                Mapping all equations...
+                Building and optimizing final netlist ...
+                Found area constraint ratio of 100 (+ 5) on block AXI_slave, actual ratio is 20.
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_0 connected to a primary input has been replicated
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_1 connected to a primary input has been replicated
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_2 connected to a primary input has been replicated
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_3 connected to a primary input has been replicated
+                FlipFlop AWADDR_reg_0 has been replicated 1 time(s)
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_0 connected to a primary input has been replicated
+                FlipFlop AWADDR_reg_1 has been replicated 2 time(s)
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_1 connected to a primary input has been replicated
+                FlipFlop AWADDR_reg_2 has been replicated 2 time(s)
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_2 connected to a primary input has been replicated
+                FlipFlop AWADDR_reg_3 has been replicated 3 time(s)
+                INFO:Xst:1843 - HDL ADVISOR - FlipFlop AWADDR_reg_3 connected to a primary input has been replicated
+
+                Final Macro Processing ...
+
+                =========================================================================
+                Final Register Report
+
+                Macro Statistics
+                # Registers                                            : 163
+                 Flip-Flops                                            : 163
+
+                =========================================================================
+
+                =========================================================================
+                *                           Partition Report                            *
+                =========================================================================
+
+                Partition Implementation Status
+                -------------------------------
+
+                  No Partitions were found in this design.
+
+                -------------------------------
+
+                =========================================================================
+                *                            Final Report                               *
+                =========================================================================
+                Final Results
+                RTL Top Level Output File Name     : AXI_slave.ngr
+                Top Level Output File Name         : AXI_slave
+                Output Format                      : NGC
+                Optimization Goal                  : Speed
+                Keep Hierarchy                     : No
+
+                Design Statistics
+                # IOs                              : 122
+
+                Cell Usage :
+                # BELS                             : 4854
+                #      BUF                         : 1
+                #      GND                         : 1
+                #      INV                         : 2
+                #      LUT2                        : 29
+                #      LUT2_D                      : 35
+                #      LUT3                        : 1049
+                #      LUT3_D                      : 59
+                #      LUT3_L                      : 88
+                #      LUT4                        : 2170
+                #      LUT4_D                      : 141
+                #      LUT4_L                      : 166
+                #      MUXF5                       : 817
+                #      MUXF6                       : 208
+                #      MUXF7                       : 88
+                # FlipFlops/Latches                : 163
+                #      FDC                         : 11
+                #      FDCE                        : 120
+                #      FDE                         : 32
+                # Clock Buffers                    : 1
+                #      BUFGP                       : 1
+                # IO Buffers                       : 65
+                #      IBUF                        : 50
+                #      OBUF                        : 15
+                =========================================================================
+
+                Device utilization summary:
+                ---------------------------
+
+                Selected Device : 4vlx25ff668-10 
+
+                 Number of Slices:                     2043  out of  10752    19%  
+                 Number of Slice Flip Flops:            163  out of  21504     0%  
+                 Number of 4 input LUTs:               3739  out of  21504    17%  
+                 Number of IOs:                         122
+                 Number of bonded IOBs:                  66  out of    448    14%  
+                 Number of GCLKs:                         1  out of     32     3%  
+
+                ---------------------------
+                Partition Resource Summary:
+                ---------------------------
+
+                  No Partitions were found in this design.
+
+                ---------------------------
+
+
+                =========================================================================
+                TIMING REPORT
+
+                NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+                      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+                      GENERATED AFTER PLACE-and-ROUTE.
+
+                Clock Information:
+                ------------------
+                -----------------------------------+------------------------+-------+
+                Clock Signal                       | Clock buffer(FF name)  | Load  |
+                -----------------------------------+------------------------+-------+
+                ACLK                               | BUFGP                  | 163   |
+                -----------------------------------+------------------------+-------+
+
+                Asynchronous Control Signals Information:
+                ----------------------------------------
+                -----------------------------------+------------------------+-------+
+                Control Signal                     | Buffer(FF name)        | Load  |
+                -----------------------------------+------------------------+-------+
+                ARESETn_inv(ARESETn_inv1_INV_0:O)  | NONE(ARREADY)          | 131   |
+                -----------------------------------+------------------------+-------+
+
+                Timing Summary:
+                ---------------
+                Speed Grade: -10
+
+                   Minimum period: 7.349ns (Maximum Frequency: 136.068MHz)
+                   Minimum input arrival time before clock: 9.430ns
+                   Maximum output required time after clock: 4.700ns
+                   Maximum combinational path delay: No path found
+
+                Timing Detail:
+                --------------
+                All values displayed in nanoseconds (ns)
+
+                =========================================================================
+                Timing constraint: Default period analysis for Clock 'ACLK'
+                  Clock period: 7.349ns (frequency: 136.068MHz)
+                  Total number of paths / destination ports: 14365 / 299
+                -------------------------------------------------------------------------
+                Delay:               7.349ns (Levels of Logic = 7)
+                  Source:            AWADDR_reg_2 (FF)
+                  Destination:       slave_mem_8_6 (FF)
+                  Source Clock:      ACLK rising
+                  Destination Clock: ACLK rising
+
+                  Data Path: AWADDR_reg_2 to slave_mem_8_6
+                                                Gate     Net
+                    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+                    ----------------------------------------  ------------
+                     FDE:C->Q            428   0.360   2.804  AWADDR_reg_2 (AWADDR_reg_2)
+                     LUT4_D:I1->O         39   0.195   1.180  slave_mem_8_mux0004<24>11 (N0)
+                     LUT4:I2->O            1   0.195   0.523  slave_mem_8_mux0010<22>1_SW0 (N2052)
+                     LUT4:I3->O            1   0.195   0.523  slave_mem_8_mux0010<22>1 (slave_mem_8_mux0010<22>)
+                     LUT4:I3->O            1   0.195   0.000  Mmux_slave_mem_8_mux0000_620 (Mmux_slave_mem_8_mux0000_620)
+                     MUXF5:I1->O           1   0.374   0.000  Mmux_slave_mem_8_mux0000_5_f5_12 (Mmux_slave_mem_8_mux0000_5_f513)
+                     MUXF6:I1->O           1   0.395   0.000  Mmux_slave_mem_8_mux0000_4_f6_5 (Mmux_slave_mem_8_mux0000_4_f66)
+                     MUXF7:I0->O           1   0.388   0.000  Mmux_slave_mem_8_mux0000_2_f7_5 (slave_mem_8_mux0000<6>)
+                     FDCE:D                    0.022          slave_mem_8_6
+                    ----------------------------------------
+                    Total                      7.349ns (2.319ns logic, 5.030ns route)
+                                                       (31.6% logic, 68.4% route)
+
+                =========================================================================
+                Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
+                  Total number of paths / destination ports: 6033 / 304
+                -------------------------------------------------------------------------
+                Offset:              9.430ns (Levels of Logic = 7)
+                  Source:            WSTRB<0> (PAD)
+                  Destination:       slave_mem_7_0 (FF)
+                  Destination Clock: ACLK rising
+
+                  Data Path: WSTRB<0> to slave_mem_7_0
+                                                Gate     Net
+                    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+                    ----------------------------------------  ------------
+                     IBUF:I->O           493   0.965   2.730  WSTRB_0_IBUF (WSTRB_0_IBUF)
+                     BUF:I->O            493   0.358   3.111  WSTRB_0_IBUF_1 (WSTRB_0_IBUF_1)
+                     LUT4:I0->O            1   0.195   0.688  Mmux_slave_mem_7_mux0000_77_SW0 (N2433)
+                     LUT4:I1->O            1   0.195   0.000  Mmux_slave_mem_7_mux0000_77 (Mmux_slave_mem_7_mux0000_77)
+                     MUXF5:I0->O           1   0.382   0.000  Mmux_slave_mem_7_mux0000_5_f5_4 (Mmux_slave_mem_7_mux0000_5_f55)
+                     MUXF6:I1->O           1   0.395   0.000  Mmux_slave_mem_7_mux0000_4_f6_1 (Mmux_slave_mem_7_mux0000_4_f62)
+                     MUXF7:I0->O           1   0.388   0.000  Mmux_slave_mem_7_mux0000_2_f7_1 (slave_mem_7_mux0000<2>)
+                     FDCE:D                    0.022          slave_mem_7_2
+                    ----------------------------------------
+                    Total                      9.430ns (2.900ns logic, 6.530ns route)
+                                                       (30.8% logic, 69.2% route)
+
+                =========================================================================
+                Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
+                  Total number of paths / destination ports: 14 / 14
+                -------------------------------------------------------------------------
+                Offset:              4.700ns (Levels of Logic = 1)
+                  Source:            AWREADY (FF)
+                  Destination:       AWREADY (PAD)
+                  Source Clock:      ACLK rising
+
+                  Data Path: AWREADY to AWREADY
+                                                Gate     Net
+                    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+                    ----------------------------------------  ------------
+                     FDC:C->Q              5   0.360   0.383  AWREADY (AWREADY_OBUF)
+                     OBUF:I->O                 3.957          AWREADY_OBUF (AWREADY)
+                    ----------------------------------------
+                    Total                      4.700ns (4.317ns logic, 0.383ns route)
+                                                       (91.9% logic, 8.1% route)
+
+                =========================================================================
+
+
+                Total REAL time to Xst completion: 22.00 secs
+                Total CPU time to Xst completion: 21.64 secs
+                 
+                --> 
+
+                Total memory usage is 257800 kilobytes
+
+                Number of errors   :    0 (   0 filtered)
+                Number of warnings :  115 (   0 filtered)
+                Number of infos    :   15 (   0 filtered)
+

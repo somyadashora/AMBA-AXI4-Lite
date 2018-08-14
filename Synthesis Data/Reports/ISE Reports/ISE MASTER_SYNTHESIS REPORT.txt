@@ -1,0 +1,556 @@
+			Release 14.7 - xst P.20131013 (nt)
+			Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+			--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+			Total REAL time to Xst completion: 0.00 secs
+			Total CPU time to Xst completion: 0.36 secs
+			 
+			--> Parameter xsthdpdir set to xst
+
+
+			Total REAL time to Xst completion: 0.00 secs
+			Total CPU time to Xst completion: 0.36 secs
+			 
+			--> Reading design: AXI_master.prj
+
+			TABLE OF CONTENTS
+			  1) Synthesis Options Summary
+			  2) HDL Compilation
+			  3) Design Hierarchy Analysis
+			  4) HDL Analysis
+			  5) HDL Synthesis
+			     5.1) HDL Synthesis Report
+			  6) Advanced HDL Synthesis
+			     6.1) Advanced HDL Synthesis Report
+			  7) Low Level Synthesis
+			  8) Partition Report
+			  9) Final Report
+				9.1) Device utilization summary
+				9.2) Partition Resource Summary
+				9.3) TIMING REPORT
+
+
+			=========================================================================
+			*                      Synthesis Options Summary                        *
+			=========================================================================
+			---- Source Parameters
+			Input File Name                    : "AXI_master.prj"
+			Input Format                       : mixed
+			Ignore Synthesis Constraint File   : NO
+
+			---- Target Parameters
+			Output File Name                   : "AXI_master"
+			Output Format                      : NGC
+			Target Device                      : xc4vlx25-10-ff668
+
+			---- Source Options
+			Top Module Name                    : AXI_master
+			Automatic FSM Extraction           : YES
+			FSM Encoding Algorithm             : Auto
+			Safe Implementation                : No
+			FSM Style                          : LUT
+			RAM Extraction                     : Yes
+			RAM Style                          : Auto
+			ROM Extraction                     : Yes
+			Mux Style                          : Auto
+			Decoder Extraction                 : YES
+			Priority Encoder Extraction        : Yes
+			Shift Register Extraction          : YES
+			Logical Shifter Extraction         : YES
+			XOR Collapsing                     : YES
+			ROM Style                          : Auto
+			Mux Extraction                     : Yes
+			Resource Sharing                   : YES
+			Asynchronous To Synchronous        : NO
+			Use DSP Block                      : Auto
+			Automatic Register Balancing       : No
+
+			---- Target Options
+			Add IO Buffers                     : YES
+			Global Maximum Fanout              : 500
+			Add Generic Clock Buffer(BUFG)     : 32
+			Number of Regional Clock Buffers   : 24
+			Register Duplication               : YES
+			Slice Packing                      : YES
+			Optimize Instantiated Primitives   : NO
+			Use Clock Enable                   : Auto
+			Use Synchronous Set                : Auto
+			Use Synchronous Reset              : Auto
+			Pack IO Registers into IOBs        : Auto
+			Equivalent register Removal        : YES
+
+			---- General Options
+			Optimization Goal                  : Speed
+			Optimization Effort                : 1
+			Power Reduction                    : NO
+			Keep Hierarchy                     : No
+			Netlist Hierarchy                  : As_Optimized
+			RTL Output                         : Yes
+			Global Optimization                : AllClockNets
+			Read Cores                         : YES
+			Write Timing Constraints           : NO
+			Cross Clock Analysis               : NO
+			Hierarchy Separator                : /
+			Bus Delimiter                      : <>
+			Case Specifier                     : Maintain
+			Slice Utilization Ratio            : 100
+			BRAM Utilization Ratio             : 100
+			DSP48 Utilization Ratio            : 100
+			Verilog 2001                       : YES
+			Auto BRAM Packing                  : NO
+			Slice Utilization Ratio Delta      : 5
+
+			=========================================================================
+
+
+			=========================================================================
+			*                          HDL Compilation                              *
+			=========================================================================
+			Compiling verilog file "../../../AXI_master.v" in library work
+			Module <AXI_master> compiled
+			No errors in compilation
+			Analysis of file <"AXI_master.prj"> succeeded.
+			 
+
+			=========================================================================
+			*                     Design Hierarchy Analysis                         *
+			=========================================================================
+			Analyzing hierarchy for module <AXI_master> in library <work> with parameters.
+				AR_IDLE_M = "00"
+				AR_TRAN_M = "10"
+				AR_VALID_M = "01"
+				B_IDLE_M = "00"
+				B_READY_M = "10"
+				B_START_M = "01"
+				R_IDLE_M = "00"
+				R_READY_M = "01"
+				R_TRAN_M = "10"
+				WA_ADDR_M = "10"
+				WA_IDLE_M = "00"
+				WA_VALID_M = "01"
+				WA_WAIT_M = "11"
+				W_GET_M = "01"
+				W_IDLE_M = "00"
+				W_TRANS_M = "11"
+				W_WAIT_M = "10"
+
+
+			=========================================================================
+			*                            HDL Analysis                               *
+			=========================================================================
+			Analyzing top module <AXI_master>.
+				AR_IDLE_M = 2'b00
+				AR_TRAN_M = 2'b10
+				AR_VALID_M = 2'b01
+				B_IDLE_M = 2'b00
+				B_READY_M = 2'b10
+				B_START_M = 2'b01
+				R_IDLE_M = 2'b00
+				R_READY_M = 2'b01
+				R_TRAN_M = 2'b10
+				WA_ADDR_M = 2'b10
+				WA_IDLE_M = 2'b00
+				WA_VALID_M = 2'b01
+				WA_WAIT_M = 2'b11
+				W_GET_M = 2'b01
+				W_IDLE_M = 2'b00
+				W_TRANS_M = 2'b11
+				W_WAIT_M = 2'b10
+			Module <AXI_master> is correct for synthesis.
+			 
+
+			=========================================================================
+			*                           HDL Synthesis                               *
+			=========================================================================
+
+			Performing bidirectional port resolution...
+
+			Synthesizing Unit <AXI_master>.
+			    Related source file is "../../../AXI_master.v".
+			WARNING:Xst:647 - Input <BRESP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+			INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WANext_state_M> of Case statement line 80 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+			   	- add an 'INIT' attribute on signal <WANext_state_M> (optimization is then done without any risk)
+			   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+			   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+			INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WState_M> of Case statement line 115 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+			   	- add an 'INIT' attribute on signal <WState_M> (optimization is then done without any risk)
+			   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+			   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+			    Found finite state machine <FSM_0> for signal <WAState_M>.
+			    -----------------------------------------------------------------------
+			    | States             | 4                                              |
+			    | Transitions        | 8                                              |
+			    | Inputs             | 4                                              |
+			    | Outputs            | 1                                              |
+			    | Clock              | ACLK                      (rising_edge)        |
+			    | Reset              | ARESETn                   (negative)           |
+			    | Reset type         | asynchronous                                   |
+			    | Reset State        | 00                                             |
+			    | Encoding           | automatic                                      |
+			    | Implementation     | LUT                                            |
+			    -----------------------------------------------------------------------
+			    Found finite state machine <FSM_1> for signal <WState_M>.
+			    -----------------------------------------------------------------------
+			    | States             | 4                                              |
+			    | Transitions        | 7                                              |
+			    | Inputs             | 3                                              |
+			    | Outputs            | 2                                              |
+			    | Clock              | ACLK                      (rising_edge)        |
+			    | Reset              | ARESETn                   (negative)           |
+			    | Reset type         | asynchronous                                   |
+			    | Reset State        | 00                                             |
+			    | Encoding           | automatic                                      |
+			    | Implementation     | LUT                                            |
+			    -----------------------------------------------------------------------
+			    Found finite state machine <FSM_2> for signal <BState_M>.
+			    -----------------------------------------------------------------------
+			    | States             | 3                                              |
+			    | Transitions        | 5                                              |
+			    | Inputs             | 2                                              |
+			    | Outputs            | 1                                              |
+			    | Clock              | ACLK                      (rising_edge)        |
+			    | Reset              | ARESETn                   (negative)           |
+			    | Reset type         | asynchronous                                   |
+			    | Reset State        | 00                                             |
+			    | Encoding           | automatic                                      |
+			    | Implementation     | LUT                                            |
+			    -----------------------------------------------------------------------
+			    Found finite state machine <FSM_3> for signal <ARState_M>.
+			    -----------------------------------------------------------------------
+			    | States             | 3                                              |
+			    | Transitions        | 6                                              |
+			    | Inputs             | 3                                              |
+			    | Outputs            | 1                                              |
+			    | Clock              | ACLK                      (rising_edge)        |
+			    | Reset              | ARESETn                   (negative)           |
+			    | Reset type         | asynchronous                                   |
+			    | Reset State        | 00                                             |
+			    | Encoding           | automatic                                      |
+			    | Implementation     | LUT                                            |
+			    -----------------------------------------------------------------------
+			    Found finite state machine <FSM_4> for signal <RState_M>.
+			    -----------------------------------------------------------------------
+			    | States             | 3                                              |
+			    | Transitions        | 6                                              |
+			    | Inputs             | 3                                              |
+			    | Outputs            | 2                                              |
+			    | Clock              | ACLK                      (rising_edge)        |
+			    | Reset              | ARESETn                   (negative)           |
+			    | Reset type         | asynchronous                                   |
+			    | Reset State        | 00                                             |
+			    | Encoding           | automatic                                      |
+			    | Implementation     | LUT                                            |
+			    -----------------------------------------------------------------------
+			    Found 32-bit register for signal <ARADDR>.
+			    Found 1-bit register for signal <ARVALID>.
+			    Found 32-bit register for signal <AWADDR>.
+			    Found 1-bit register for signal <AWVALID>.
+			    Found 1-bit register for signal <BREADY>.
+			    Found 1-bit register for signal <RREADY>.
+			    Found 8-bit register for signal <U_data_out>.
+			    Found 32-bit register for signal <WDATA>.
+			    Found 4-bit register for signal <WSTRB>.
+			    Found 1-bit register for signal <WVALID>.
+			    Found 32-bit comparator greater for signal <ARState_M$cmp_gt0000> created at line 224.
+			    Found 32-bit comparator not equal for signal <RState_M$cmp_ne0000> created at line 271.
+			    Found 32-bit comparator greater for signal <WAState_M$cmp_gt0000> created at line 60.
+			    Summary:
+				inferred   5 Finite State Machine(s).
+				inferred 113 D-type flip-flop(s).
+				inferred   3 Comparator(s).
+			Unit <AXI_master> synthesized.
+
+
+			=========================================================================
+			HDL Synthesis Report
+
+			Macro Statistics
+			# Registers                                            : 10
+			 1-bit register                                        : 5
+			 32-bit register                                       : 3
+			 4-bit register                                        : 1
+			 8-bit register                                        : 1
+			# Comparators                                          : 3
+			 32-bit comparator greater                             : 2
+			 32-bit comparator not equal                           : 1
+
+			=========================================================================
+
+			=========================================================================
+			*                       Advanced HDL Synthesis                          *
+			=========================================================================
+
+			Analyzing FSM <FSM_4> for best encoding.
+			Optimizing FSM <RState_M/FSM> on signal <RState_M[1:2]> with user encoding.
+			-------------------
+			 State | Encoding
+			-------------------
+			 00    | 00
+			 01    | 01
+			 10    | 10
+			-------------------
+			Analyzing FSM <FSM_3> for best encoding.
+			Optimizing FSM <ARState_M/FSM> on signal <ARState_M[1:2]> with user encoding.
+			-------------------
+			 State | Encoding
+			-------------------
+			 00    | 00
+			 01    | 01
+			 10    | 10
+			-------------------
+			Analyzing FSM <FSM_2> for best encoding.
+			Optimizing FSM <BState_M/FSM> on signal <BState_M[1:2]> with user encoding.
+			-------------------
+			 State | Encoding
+			-------------------
+			 00    | 00
+			 01    | 01
+			 10    | 10
+			-------------------
+			Analyzing FSM <FSM_1> for best encoding.
+			Optimizing FSM <WState_M/FSM> on signal <WState_M[1:2]> with gray encoding.
+			-------------------
+			 State | Encoding
+			-------------------
+			 00    | 00
+			 01    | 01
+			 10    | 11
+			 11    | 10
+			-------------------
+			Analyzing FSM <FSM_0> for best encoding.
+			Optimizing FSM <WAState_M/FSM> on signal <WAState_M[1:2]> with gray encoding.
+			-------------------
+			 State | Encoding
+			-------------------
+			 00    | 00
+			 01    | 01
+			 10    | 11
+			 11    | 10
+			-------------------
+
+			=========================================================================
+			Advanced HDL Synthesis Report
+
+			Macro Statistics
+			# FSMs                                                 : 5
+			# Registers                                            : 113
+			 Flip-Flops                                            : 113
+			# Comparators                                          : 3
+			 32-bit comparator greater                             : 2
+			 32-bit comparator not equal                           : 1
+
+			=========================================================================
+
+			=========================================================================
+			*                         Low Level Synthesis                           *
+			=========================================================================
+			INFO:Xst:2261 - The FF/Latch <RREADY> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <RState_M_FSM_FFd2> 
+			INFO:Xst:2261 - The FF/Latch <ARVALID> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <ARState_M_FSM_FFd2> 
+			INFO:Xst:2261 - The FF/Latch <BREADY> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <BState_M_FSM_FFd2> 
+
+			Optimizing unit <AXI_master> ...
+
+			Mapping all equations...
+			Building and optimizing final netlist ...
+			Found area constraint ratio of 100 (+ 5) on block AXI_master, actual ratio is 0.
+
+			Final Macro Processing ...
+
+			=========================================================================
+			Final Register Report
+
+			Macro Statistics
+			# Registers                                            : 120
+			 Flip-Flops                                            : 120
+
+			=========================================================================
+
+			=========================================================================
+			*                           Partition Report                            *
+			=========================================================================
+
+			Partition Implementation Status
+			-------------------------------
+
+			  No Partitions were found in this design.
+
+			-------------------------------
+
+			=========================================================================
+			*                            Final Report                               *
+			=========================================================================
+			Final Results
+			RTL Top Level Output File Name     : AXI_master.ngr
+			Top Level Output File Name         : AXI_master
+			Output Format                      : NGC
+			Optimization Goal                  : Speed
+			Keep Hierarchy                     : No
+
+			Design Statistics
+			# IOs                              : 232
+
+			Cell Usage :
+			# BELS                             : 200
+			#      GND                         : 1
+			#      INV                         : 1
+			#      LUT2                        : 9
+			#      LUT3                        : 70
+			#      LUT4                        : 80
+			#      LUT4_D                      : 6
+			#      MUXCY                       : 32
+			#      VCC                         : 1
+			# FlipFlops/Latches                : 120
+			#      FD                          : 108
+			#      FDC                         : 12
+			# Clock Buffers                    : 1
+			#      BUFGP                       : 1
+			# IO Buffers                       : 229
+			#      IBUF                        : 116
+			#      OBUF                        : 113
+			=========================================================================
+
+			Device utilization summary:
+			---------------------------
+
+			Selected Device : 4vlx25ff668-10 
+
+			 Number of Slices:                       91  out of  10752     0%  
+			 Number of Slice Flip Flops:            120  out of  21504     0%  
+			 Number of 4 input LUTs:                166  out of  21504     0%  
+			 Number of IOs:                         232
+			 Number of bonded IOBs:                 230  out of    448    51%  
+			 Number of GCLKs:                         1  out of     32     3%  
+
+			---------------------------
+			Partition Resource Summary:
+			---------------------------
+
+			  No Partitions were found in this design.
+
+			---------------------------
+
+
+			=========================================================================
+			TIMING REPORT
+
+			NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+			      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+			      GENERATED AFTER PLACE-and-ROUTE.
+
+			Clock Information:
+			------------------
+			-----------------------------------+------------------------+-------+
+			Clock Signal                       | Clock buffer(FF name)  | Load  |
+			-----------------------------------+------------------------+-------+
+			ACLK                               | BUFGP                  | 120   |
+			-----------------------------------+------------------------+-------+
+
+			Asynchronous Control Signals Information:
+			----------------------------------------
+			-----------------------------------+-------------------------+-------+
+			Control Signal                     | Buffer(FF name)         | Load  |
+			-----------------------------------+-------------------------+-------+
+			ARESETn_inv(ARESETn_inv1_INV_0:O)  | NONE(ARState_M_FSM_FFd1)| 12    |
+			-----------------------------------+-------------------------+-------+
+
+			Timing Summary:
+			---------------
+			Speed Grade: -10
+
+			   Minimum period: 2.134ns (Maximum Frequency: 468.593MHz)
+			   Minimum input arrival time before clock: 5.741ns
+			   Maximum output required time after clock: 4.817ns
+			   Maximum combinational path delay: No path found
+
+			Timing Detail:
+			--------------
+			All values displayed in nanoseconds (ns)
+
+			=========================================================================
+			Timing constraint: Default period analysis for Clock 'ACLK'
+			  Clock period: 2.134ns (frequency: 468.593MHz)
+			  Total number of paths / destination ports: 337 / 120
+			-------------------------------------------------------------------------
+			Delay:               2.134ns (Levels of Logic = 2)
+			  Source:            WAState_M_FSM_FFd1 (FF)
+			  Destination:       AWADDR_1 (FF)
+			  Source Clock:      ACLK rising
+			  Destination Clock: ACLK rising
+
+			  Data Path: WAState_M_FSM_FFd1 to AWADDR_1
+			                                Gate     Net
+			    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+			    ----------------------------------------  ------------
+			     FDC:C->Q              5   0.360   0.608  WAState_M_FSM_FFd1 (WAState_M_FSM_FFd1)
+			     LUT4_D:I2->O         15   0.195   0.754  AWADDR_and00001 (AWADDR_and0000)
+			     LUT3:I2->O            1   0.195   0.000  AWADDR_16_rstpot (AWADDR_16_rstpot)
+			     FD:D                      0.022          AWADDR_16
+			    ----------------------------------------
+			    Total                      2.134ns (0.772ns logic, 1.362ns route)
+			                                       (36.2% logic, 63.8% route)
+
+			=========================================================================
+			Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
+			  Total number of paths / destination ports: 2719 / 120
+			-------------------------------------------------------------------------
+			Offset:              5.741ns (Levels of Logic = 13)
+			  Source:            U_awaddr<0> (PAD)
+			  Destination:       AWADDR_1 (FF)
+			  Destination Clock: ACLK rising
+
+			  Data Path: U_awaddr<0> to AWADDR_1
+			                                Gate     Net
+			    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+			    ----------------------------------------  ------------
+			     IBUF:I->O             3   0.965   0.756  U_awaddr_0_IBUF (U_awaddr_0_IBUF)
+			     LUT4:I0->O            1   0.195   0.000  Mcompar_WAState_M_cmp_gt0000_lut<0> (Mcompar_WAState_M_cmp_gt0000_lut<0>)
+			     MUXCY:S->O            1   0.366   0.000  Mcompar_WAState_M_cmp_gt0000_cy<0> (Mcompar_WAState_M_cmp_gt0000_cy<0>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<1> (Mcompar_WAState_M_cmp_gt0000_cy<1>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<2> (Mcompar_WAState_M_cmp_gt0000_cy<2>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<3> (Mcompar_WAState_M_cmp_gt0000_cy<3>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<4> (Mcompar_WAState_M_cmp_gt0000_cy<4>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<5> (Mcompar_WAState_M_cmp_gt0000_cy<5>)
+			     MUXCY:CI->O           1   0.045   0.000  Mcompar_WAState_M_cmp_gt0000_cy<6> (Mcompar_WAState_M_cmp_gt0000_cy<6>)
+			     MUXCY:CI->O           3   0.369   0.703  Mcompar_WAState_M_cmp_gt0000_cy<7> (Mcompar_WAState_M_cmp_gt0000_cy<7>)
+			     LUT3:I0->O            2   0.195   0.758  AWADDR_and00001_SW0 (N6)
+			     LUT4_D:I0->O         15   0.195   0.754  AWADDR_and00001 (AWADDR_and0000)
+			     LUT3:I2->O            1   0.195   0.000  AWADDR_16_rstpot (AWADDR_16_rstpot)
+			     FD:D                      0.022          AWADDR_16
+			    ----------------------------------------
+			    Total                      5.741ns (2.770ns logic, 2.971ns route)
+			                                       (48.2% logic, 51.8% route)
+
+			=========================================================================
+			Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
+			  Total number of paths / destination ports: 113 / 113
+			-------------------------------------------------------------------------
+			Offset:              4.817ns (Levels of Logic = 1)
+			  Source:            RREADY (FF)
+			  Destination:       RREADY (PAD)
+			  Source Clock:      ACLK rising
+
+			  Data Path: RREADY to RREADY
+			                                Gate     Net
+			    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+			    ----------------------------------------  ------------
+			     FDC:C->Q             11   0.360   0.500  RREADY (RREADY_OBUF)
+			     OBUF:I->O                 3.957          RREADY_OBUF (RREADY)
+			    ----------------------------------------
+			    Total                      4.817ns (4.317ns logic, 0.500ns route)
+			                                       (89.6% logic, 10.4% route)
+
+			=========================================================================
+
+
+			Total REAL time to Xst completion: 4.00 secs
+			Total CPU time to Xst completion: 4.36 secs
+			 
+			--> 
+
+			Total memory usage is 211336 kilobytes
+
+			Number of errors   :    0 (   0 filtered)
+			Number of warnings :    1 (   0 filtered)
+			Number of infos    :    5 (   0 filtered)
+

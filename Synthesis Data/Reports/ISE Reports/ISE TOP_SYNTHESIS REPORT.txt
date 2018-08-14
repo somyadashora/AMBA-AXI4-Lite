@@ -1,0 +1,1401 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: AXI_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "AXI_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "AXI_top"
+Output Format                      : NGC
+Target Device                      : xc4vlx25-10-ff668
+
+---- Source Options
+Top Module Name                    : AXI_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Number of Regional Clock Buffers   : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../../AXI_slave.v" in library work
+Compiling verilog file "../../../AXI_master.v" in library work
+Module <AXI_slave> compiled
+Compiling verilog file "../../../AXI_top.v" in library work
+Module <AXI_master> compiled
+Module <AXI_top> compiled
+No errors in compilation
+Analysis of file <"AXI_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <AXI_top> in library <work> with parameters.
+	WIDTH = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <AXI_master> in library <work> with parameters.
+	AR_IDLE_M = "00"
+	AR_TRAN_M = "10"
+	AR_VALID_M = "01"
+	B_IDLE_M = "00"
+	B_READY_M = "10"
+	B_START_M = "01"
+	R_IDLE_M = "00"
+	R_READY_M = "01"
+	R_TRAN_M = "10"
+	WA_ADDR_M = "10"
+	WA_IDLE_M = "00"
+	WA_VALID_M = "01"
+	WA_WAIT_M = "11"
+	W_GET_M = "01"
+	W_IDLE_M = "00"
+	W_TRANS_M = "11"
+	W_WAIT_M = "10"
+
+Analyzing hierarchy for module <AXI_slave> in library <work> with parameters.
+	AR_IDLE_S = "00"
+	AR_READY_S = "01"
+	AR_TRAN_S = "10"
+	B_IDLE_S = "00"
+	B_READY_S = "10"
+	B_START_S = "01"
+	R_IDLE_S = "00"
+	R_START_S = "01"
+	R_VALID_S = "10"
+	WA_IDLE_S = "00"
+	WA_READY_S = "10"
+	WA_START_S = "01"
+	W_IDLE_S = "00"
+	W_START_S = "01"
+	W_TRAN_S = "11"
+	W_WAIT_S = "10"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <AXI_top>.
+	WIDTH = 32'sb00000000000000000000000000100000
+Module <AXI_top> is correct for synthesis.
+ 
+Analyzing module <AXI_master> in library <work>.
+	AR_IDLE_M = 2'b00
+	AR_TRAN_M = 2'b10
+	AR_VALID_M = 2'b01
+	B_IDLE_M = 2'b00
+	B_READY_M = 2'b10
+	B_START_M = 2'b01
+	R_IDLE_M = 2'b00
+	R_READY_M = 2'b01
+	R_TRAN_M = 2'b10
+	WA_ADDR_M = 2'b10
+	WA_IDLE_M = 2'b00
+	WA_VALID_M = 2'b01
+	WA_WAIT_M = 2'b11
+	W_GET_M = 2'b01
+	W_IDLE_M = 2'b00
+	W_TRANS_M = 2'b11
+	W_WAIT_M = 2'b10
+Module <AXI_master> is correct for synthesis.
+ 
+Analyzing module <AXI_slave> in library <work>.
+	AR_IDLE_S = 2'b00
+	AR_READY_S = 2'b01
+	AR_TRAN_S = 2'b10
+	B_IDLE_S = 2'b00
+	B_READY_S = 2'b10
+	B_START_S = 2'b01
+	R_IDLE_S = 2'b00
+	R_START_S = 2'b01
+	R_VALID_S = 2'b10
+	WA_IDLE_S = 2'b00
+	WA_READY_S = 2'b10
+	WA_START_S = 2'b01
+	W_IDLE_S = 2'b00
+	W_START_S = 2'b01
+	W_TRAN_S = 2'b11
+	W_WAIT_S = 2'b10
+INFO:Xst:1607 - Contents of array <slave_mem> may be accessed with an index that does not cover the full array size.
+Module <AXI_slave> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <AXI_master>.
+    Related source file is "../../../AXI_master.v".
+WARNING:Xst:647 - Input <BRESP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WANext_state_M> of Case statement line 80 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <WANext_state_M> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WState_M> of Case statement line 115 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <WState_M> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <WAState_M>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <WState_M>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <BState_M>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <ARState_M>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_4> for signal <RState_M>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit register for signal <ARADDR>.
+    Found 32-bit register for signal <AWADDR>.
+    Found 8-bit register for signal <U_data_out>.
+    Found 1-bit register for signal <WVALID>.
+    Found 1-bit register for signal <BREADY>.
+    Found 1-bit register for signal <RREADY>.
+    Found 1-bit register for signal <AWVALID>.
+    Found 1-bit register for signal <ARVALID>.
+    Found 32-bit register for signal <WDATA>.
+    Found 4-bit register for signal <WSTRB>.
+    Found 32-bit comparator greater for signal <ARState_M$cmp_gt0000> created at line 224.
+    Found 32-bit comparator not equal for signal <RState_M$cmp_ne0000> created at line 271.
+    Found 32-bit comparator greater for signal <WAState_M$cmp_gt0000> created at line 60.
+    Summary:
+	inferred   5 Finite State Machine(s).
+	inferred 113 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <AXI_master> synthesized.
+
+
+Synthesizing Unit <AXI_slave>.
+    Related source file is "../../../AXI_slave.v".
+WARNING:Xst:646 - Signal <ARADDR_reg<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <WState_S> of Case statement line 111 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <WState_S> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_5> for signal <WAState_S>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_6> for signal <WState_S>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_7> for signal <BState_S>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_8> for signal <ARState_S>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_9> for signal <RState_S>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 1                                              |
+    | Clock              | ACLK                      (rising_edge)        |
+    | Reset              | ARESETn                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <BVALID>.
+    Found 2-bit register for signal <BRESP>.
+    Found 1-bit register for signal <RVALID>.
+    Found 8-bit register for signal <RDATA>.
+    Found 1-bit register for signal <WREADY>.
+    Found 1-bit register for signal <AWREADY>.
+    Found 1-bit register for signal <ARREADY>.
+    Found 8-bit 16-to-1 multiplexer for signal <$varindex0000> created at line 375.
+    Found 32-bit register for signal <ARADDR_reg>.
+    Found 32-bit register for signal <AWADDR_reg>.
+    Found 128-bit register for signal <slave_mem>.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_0$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_1$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_10$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0001> created at line 164.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0002> created at line 169.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0003> created at line 174.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0004> created at line 179.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0005> created at line 184.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0006> created at line 189.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0007> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0008> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0009> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_10$mux0010> created at line 213.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_11$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0001> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0002> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0003> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0004> created at line 213.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_11$mux0005> created at line 220.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_12$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_13$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_14$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0001> created at line 164.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0002> created at line 169.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0003> created at line 174.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0004> created at line 179.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0005> created at line 184.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0006> created at line 189.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0007> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0008> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0009> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_14$mux0010> created at line 213.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_15$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0001> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0002> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0003> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0004> created at line 213.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_15$mux0005> created at line 220.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_2$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0002> created at line 164.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0003> created at line 169.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0004> created at line 174.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0005> created at line 179.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0006> created at line 184.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0007> created at line 189.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0008> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0009> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_2$mux0010> created at line 213.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_3$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0001> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0002> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0003> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0004> created at line 213.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_3$mux0005> created at line 220.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_4$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_5$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_6$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0001> created at line 164.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0002> created at line 169.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0003> created at line 174.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0004> created at line 179.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0005> created at line 184.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0006> created at line 189.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0007> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0008> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0009> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_6$mux0010> created at line 213.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_7$mux0000> created at line 144.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0001> created at line 195.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0002> created at line 201.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0003> created at line 207.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0004> created at line 213.
+    Found 8-bit 4-to-1 multiplexer for signal <slave_mem_7$mux0005> created at line 220.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_8$mux0000> created at line 144.
+    Found 8-bit 16-to-1 multiplexer for signal <slave_mem_9$mux0000> created at line 144.
+    Summary:
+	inferred   5 Finite State Machine(s).
+	inferred 207 D-type flip-flop(s).
+	inferred 608 Multiplexer(s).
+Unit <AXI_slave> synthesized.
+
+
+Synthesizing Unit <AXI_top>.
+    Related source file is "../../../AXI_top.v".
+WARNING:Xst:653 - Signal <U_SW> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <U_SR> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+Unit <AXI_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 35
+ 1-bit register                                        : 10
+ 2-bit register                                        : 1
+ 32-bit register                                       : 5
+ 4-bit register                                        : 1
+ 8-bit register                                        : 18
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 2
+ 32-bit comparator not equal                           : 1
+# Multiplexers                                         : 76
+ 8-bit 16-to-1 multiplexer                             : 17
+ 8-bit 4-to-1 multiplexer                              : 59
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_9> for best encoding.
+Optimizing FSM <slv/RState_S/FSM> on signal <RState_S[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_8> for best encoding.
+Optimizing FSM <slv/ARState_S/FSM> on signal <ARState_S[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_7> for best encoding.
+Optimizing FSM <slv/BState_S/FSM> on signal <BState_S[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_6> for best encoding.
+Optimizing FSM <slv/WState_S/FSM> on signal <WState_S[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <FSM_5> for best encoding.
+Optimizing FSM <slv/WAState_S/FSM> on signal <WAState_S[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_4> for best encoding.
+Optimizing FSM <mstr/RState_M/FSM> on signal <RState_M[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <mstr/ARState_M/FSM> on signal <ARState_M[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <mstr/BState_M/FSM> on signal <BState_M[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <mstr/WState_M/FSM> on signal <WState_M[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <mstr/WAState_M/FSM> on signal <WAState_M[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+WARNING:Xst:1710 - FF/Latch <U_data_out_7> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_6> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_5> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_4> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_3> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_2> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_1> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U_data_out_0> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_3> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_2> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_1> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_0> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARVALID> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_31> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_30> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_29> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_28> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_27> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_26> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_25> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RDATA_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RVALID> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARREADY> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_reg_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_reg_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_reg_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_reg_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWREADY> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_reg_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_reg_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_reg_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_reg_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd2> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_4> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_3> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_2> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_1> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_0> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WSTRB_3> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WSTRB_2> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WSTRB_1> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WSTRB_0> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_3> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_2> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_1> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWADDR_0> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AWVALID> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WVALID> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd2> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd2> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd1> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd2> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd1> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_24> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_23> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_22> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_21> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_20> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_19> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_18> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_17> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_16> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_15> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_14> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_13> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_12> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_11> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_10> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_9> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_8> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_7> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_6> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_5> (without init value) has a constant value of 0 in block <mstr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <AWADDR_4> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_5> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_6> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_7> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_8> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_9> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_10> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_11> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_12> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_13> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_14> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_15> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_16> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_17> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_18> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_19> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_20> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_21> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_22> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_23> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_24> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_25> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_26> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_27> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_28> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_29> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_30> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_31> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_4> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_5> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_6> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_7> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_8> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_9> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_10> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_11> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_12> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_13> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_14> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_15> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_16> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_17> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_18> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_19> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_20> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_21> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_22> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_23> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_24> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_25> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_26> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_27> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_28> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_29> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_30> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <ARADDR_31> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <AWADDR_reg_4> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_5> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_6> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_7> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_8> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_9> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_10> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_11> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_12> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_13> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_14> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_15> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_16> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_17> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_18> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_19> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_20> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_21> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_22> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_23> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_24> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_25> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_26> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_27> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_28> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_29> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_30> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <AWADDR_reg_31> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_4> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_5> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_6> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_7> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_8> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_9> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_10> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_11> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_12> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_13> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_14> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_15> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_16> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_17> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_18> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_19> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_20> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_21> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_22> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_23> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_24> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_25> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_26> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_27> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_28> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_29> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_30> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <ARADDR_reg_31> of sequential type is unconnected in block <slv>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <FFd2> is unconnected in block <FSM>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <FFd1> is unconnected in block <FSM>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <FFd2> is unconnected in block <FSM>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <FFd1> is unconnected in block <FSM>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <RREADY> is unconnected in block <mstr>.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_10_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_12_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_8_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_7_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_14_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_13_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_15_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_11_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_1_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_3_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_0_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FFd1> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_9_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_5_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_2_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_6_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_0> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_1> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_2> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_3> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_4> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_5> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_6> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slave_mem_4_7> (without init value) has a constant value of 0 in block <slv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <BREADY> of sequential type is unconnected in block <mstr>.
+WARNING:Xst:2677 - Node <WREADY> of sequential type is unconnected in block <slv>.
+WARNING:Xst:2677 - Node <BVALID> of sequential type is unconnected in block <slv>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <FFd2> is unconnected in block <FSM>.
+WARNING:Xst:2677 - Node <AWADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <AWADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_4> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_5> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_6> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_7> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_8> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_9> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_10> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_11> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_12> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_13> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_14> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_15> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_16> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_17> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_18> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_19> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_20> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_21> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_22> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_23> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_24> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_25> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_26> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_27> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_28> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_29> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_30> of sequential type is unconnected in block <AXI_slave>.
+WARNING:Xst:2677 - Node <ARADDR_reg_31> of sequential type is unconnected in block <AXI_slave>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 10
+# Registers                                            : 264
+ Flip-Flops                                            : 264
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 2
+ 32-bit comparator not equal                           : 1
+# Multiplexers                                         : 76
+ 8-bit 16-to-1 multiplexer                             : 17
+ 8-bit 4-to-1 multiplexer                              : 59
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <RREADY> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <RState_M_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <ARVALID> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <ARState_M_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <BREADY> in Unit <AXI_master> is equivalent to the following FF/Latch, which will be removed : <BState_M_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <ARREADY> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <ARState_S_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <BVALID> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <BState_S_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <BRESP_0> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <BState_S_FSM_FFd1> 
+INFO:Xst:2261 - The FF/Latch <AWREADY> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <WAState_S_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <RVALID> in Unit <AXI_slave> is equivalent to the following FF/Latch, which will be removed : <RState_S_FSM_FFd1> 
+WARNING:Xst:1710 - FF/Latch <ARVALID> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ARADDR_31> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_30> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_29> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_28> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_27> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_26> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_25> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_24> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_23> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_22> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_21> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_20> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_19> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_18> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_17> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_16> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_15> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_14> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_13> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_12> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_11> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_10> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_9> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_8> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_7> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_6> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_5> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_4> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_3> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ARADDR_0> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ARState_M_FSM_FFd1> of sequential type is unconnected in block <AXI_master>.
+WARNING:Xst:1710 - FF/Latch <BRESP_1> (without init value) has a constant value of 0 in block <AXI_slave>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WDATA_18> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_17> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_16> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_15> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_14> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_13> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_12> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_11> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_10> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_9> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_8> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_7> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_6> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_5> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_4> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_3> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WAState_M_FSM_FFd2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WAState_M_FSM_FFd1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WState_M_FSM_FFd2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WState_M_FSM_FFd1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWVALID> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WVALID> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_31> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_30> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_29> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_28> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_27> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_26> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_25> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_24> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_23> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_22> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_21> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_20> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_19> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_17> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_16> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_15> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_14> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_13> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_12> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_11> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_10> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_9> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_8> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_7> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_6> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_5> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_4> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_3> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_0> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WDATA_0> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WSTRB_3> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WSTRB_2> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WSTRB_1> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WSTRB_0> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_31> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_30> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_29> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_28> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_27> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_26> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_25> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_24> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_23> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_22> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_21> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_20> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_19> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AWADDR_18> (without init value) has a constant value of 0 in block <AXI_master>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <AXI_top> ...
+
+Optimizing unit <AXI_master> ...
+
+Optimizing unit <AXI_slave> ...
+WARNING:Xst:1710 - FF/Latch <slv/slave_mem_4_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_3_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_5_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_6_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_4_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/ARREADY> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_15_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/AWREADY> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/ARADDR_reg_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/ARADDR_reg_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/ARADDR_reg_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/ARADDR_reg_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/AWADDR_reg_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/AWADDR_reg_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/AWADDR_reg_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/AWADDR_reg_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_2_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_1_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_0_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_11_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_13_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_14_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RVALID> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RState_S_FSM_FFd2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/WState_S_FSM_FFd1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/RREADY> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_7_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_8_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_10_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_9_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/slave_mem_12_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv/RDATA_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_0> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_1> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_2> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_3> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_4> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_5> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_6> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr/U_data_out_7> (without init value) has a constant value of 0 in block <AXI_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <mstr/BState_M_FSM_FFd1> of sequential type is unconnected in block <AXI_top>.
+WARNING:Xst:2677 - Node <mstr/BREADY> of sequential type is unconnected in block <AXI_top>.
+WARNING:Xst:2677 - Node <slv/BRESP_0> of sequential type is unconnected in block <AXI_top>.
+WARNING:Xst:2677 - Node <slv/BVALID> of sequential type is unconnected in block <AXI_top>.
+WARNING:Xst:2677 - Node <slv/WREADY> of sequential type is unconnected in block <AXI_top>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <slv/ARState_S_FSM_FFd1> is unconnected in block <AXI_top>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <slv/WAState_S_FSM_FFd1> is unconnected in block <AXI_top>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <slv/WState_S_FSM_FFd2> is unconnected in block <AXI_top>.
+WARNING:Xst:2677 - Node <mstr/RState_M_FSM_FFd1> of sequential type is unconnected in block <AXI_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block AXI_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : AXI_top.ngr
+Top Level Output File Name         : AXI_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 110
+
+Cell Usage :
+# BELS                             : 1
+#      GND                         : 1
+# IO Buffers                       : 8
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 4vlx25ff668-10 
+
+ Number of Slices:                        0  out of  10752     0%  
+ Number of IOs:                         110
+ Number of bonded IOBs:                   8  out of    448     1%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -10
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.80 secs
+ 
+--> 
+
+Total memory usage is 258952 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  666 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+

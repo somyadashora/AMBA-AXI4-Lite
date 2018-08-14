@@ -1,0 +1,677 @@
+#-----------------------------------------------------------
+# Vivado v2014.4
+# SW Build 1071353 on Tue Nov 18 18:06:20 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Aug 01 18:25:17 2018
+# Process ID: 5856
+# Log file: C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.runs/synth_1/AXI_top.vds
+# Journal file: C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source AXI_top.tcl
+# set_param gui.test TreeTableDev
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# set_msg_config -id {Synth 8-256} -limit 10000
+# set_msg_config -id {Synth 8-638} -limit 10000
+# create_project -in_memory -part xc7z020clg484-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_property webtalk.parent_dir C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.cache/wt [current_project]
+# set_property parent.project_path C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language Verilog [current_project]
+# set_property board_part em.avnet.com:zed:part0:1.2 [current_project]
+# read_verilog -library xil_defaultlib {
+#   C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v
+#   C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v
+#   C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v
+# }
+# catch { write_hwdef -file AXI_top.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top AXI_top -part xc7z020clg484-1
+Command: synth_design -top AXI_top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-1223] The version limit for your license is '2018.04' and will expire in -93 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:23 . Memory (MB): peak = 186.109 ; gain = 44.719
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'AXI_top' [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:5]
+INFO: [Synth 8-638] synthesizing module 'AXI_master' [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:2]
+	Parameter WA_IDLE_M bound to: 2'b00 
+	Parameter WA_VALID_M bound to: 2'b01 
+	Parameter WA_ADDR_M bound to: 2'b10 
+	Parameter WA_WAIT_M bound to: 2'b11 
+	Parameter W_IDLE_M bound to: 2'b00 
+	Parameter W_GET_M bound to: 2'b01 
+	Parameter W_WAIT_M bound to: 2'b10 
+	Parameter W_TRANS_M bound to: 2'b11 
+	Parameter B_IDLE_M bound to: 2'b00 
+	Parameter B_START_M bound to: 2'b01 
+	Parameter B_READY_M bound to: 2'b10 
+	Parameter AR_IDLE_M bound to: 2'b00 
+	Parameter AR_VALID_M bound to: 2'b01 
+	Parameter AR_TRAN_M bound to: 2'b10 
+	Parameter R_IDLE_M bound to: 2'b00 
+	Parameter R_READY_M bound to: 2'b01 
+	Parameter R_TRAN_M bound to: 2'b10 
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:58]
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:80]
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:115]
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:137]
+INFO: [Synth 8-256] done synthesizing module 'AXI_master' (1#1) [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_master.v:2]
+INFO: [Synth 8-638] synthesizing module 'AXI_slave' [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:3]
+	Parameter WA_IDLE_S bound to: 2'b00 
+	Parameter WA_START_S bound to: 2'b01 
+	Parameter WA_READY_S bound to: 2'b10 
+	Parameter W_IDLE_S bound to: 2'b00 
+	Parameter W_START_S bound to: 2'b01 
+	Parameter W_WAIT_S bound to: 2'b10 
+	Parameter W_TRAN_S bound to: 2'b11 
+	Parameter B_IDLE_S bound to: 2'b00 
+	Parameter B_START_S bound to: 2'b01 
+	Parameter B_READY_S bound to: 2'b10 
+	Parameter AR_IDLE_S bound to: 2'b00 
+	Parameter AR_READY_S bound to: 2'b01 
+	Parameter AR_TRAN_S bound to: 2'b10 
+	Parameter R_IDLE_S bound to: 2'b00 
+	Parameter R_START_S bound to: 2'b01 
+	Parameter R_VALID_S bound to: 2'b10 
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:111]
+WARNING: [Synth 8-324] index 16 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 17 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 18 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 19 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 20 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 21 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 22 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 23 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 24 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 25 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 26 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 27 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 28 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 29 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 30 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 31 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 32 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 33 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 34 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 35 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 36 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 37 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 38 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 39 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 40 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 41 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 42 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 43 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 44 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 45 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 46 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 47 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 48 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 49 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 50 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 51 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 52 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 53 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 54 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 55 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 56 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 57 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 58 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 59 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 60 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 61 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 62 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 63 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 64 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 65 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 66 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 67 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 68 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 69 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 70 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 71 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 72 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 73 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 74 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 75 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 76 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 77 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 78 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 79 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 80 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 81 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 82 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 83 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 84 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 85 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 86 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 87 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 88 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 89 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 90 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 91 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 92 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 93 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 94 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 95 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 96 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 97 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 98 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 99 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 100 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 101 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 102 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 103 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 104 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 105 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 106 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 107 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 108 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 109 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 110 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 111 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 112 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 113 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 114 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+WARNING: [Synth 8-324] index 115 out of range [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:131]
+INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-226] default block is never used [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:134]
+INFO: [Synth 8-256] done synthesizing module 'AXI_slave' (2#1) [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_slave.v:3]
+WARNING: [Synth 8-3848] Net U_SW in module/entity AXI_top does not have driver. [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:54]
+WARNING: [Synth 8-3848] Net U_SR in module/entity AXI_top does not have driver. [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:53]
+INFO: [Synth 8-256] done synthesizing module 'AXI_top' (3#1) [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:5]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:24 . Memory (MB): peak = 212.289 ; gain = 70.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 212.289 ; gain = 70.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 212.289 ; gain = 70.898
+---------------------------------------------------------------------------------
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+WARNING: [Synth 8-3848] Net U_SW in module/entity AXI_top does not have driver. [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:54]
+WARNING: [Synth 8-3848] Net U_SR in module/entity AXI_top does not have driver. [C:/Users/exam/Desktop/Synthesis/AXI4LITE/AXI4LITE.srcs/sources_1/imports/Synthesis/AXI_top.v:53]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 268.965 ; gain = 127.574
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 5     
+	                8 Bit    Registers := 18    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 11    
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 176   
+	   2 Input      2 Bit        Muxes := 19    
+	   4 Input      2 Bit        Muxes := 20    
+	   4 Input      1 Bit        Muxes := 29    
+	   2 Input      1 Bit        Muxes := 64    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module AXI_top 
+Detailed RTL Component Info : 
+Module AXI_master 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 12    
+	   4 Input      2 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module AXI_slave 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 17    
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 176   
+	   4 Input      2 Bit        Muxes := 10    
+	   2 Input      2 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 22    
+	   2 Input      1 Bit        Muxes := 64    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Loading clock regions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.4/data\./parts/xilinx/zynq/IOStandards.xml
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 336.020 ; gain = 194.629
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+ROM "slave_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18) 
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 337.668 ; gain = 196.277
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 337.668 ; gain = 196.277
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mstr/ARADDR_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mstr/ARADDR_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mstr/ARADDR_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mstr/ARADDR_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\slv/RDATA_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\slv/RDATA_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (\mstr/WAState_M_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WAState_M_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWVALID_reg ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[31] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[30] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[29] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[28] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[27] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[26] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[25] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[24] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[23] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[22] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[21] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[20] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[19] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[18] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[17] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[16] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[15] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[14] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[13] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[12] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[11] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[10] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[9] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[8] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[7] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[6] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[5] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[4] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[3] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[2] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/AWADDR_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WState_M_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WState_M_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WVALID_reg ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WSTRB_reg[3] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WSTRB_reg[2] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WSTRB_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WSTRB_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[31] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[30] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[29] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[28] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[27] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[26] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[25] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[24] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[23] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[22] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[21] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[20] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[19] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[18] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[17] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[16] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[15] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[14] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[13] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[12] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[11] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[10] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[9] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[8] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[7] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[6] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[5] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[4] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[3] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[2] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/WDATA_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/BState_M_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/BState_M_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/BREADY_reg ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARState_M_reg[1] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARState_M_reg[0] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARVALID_reg ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[31] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[30] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[29] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[28] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[27] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[26] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[25] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[24] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[23] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[22] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[21] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[20] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[19] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[18] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[17] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[16] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[15] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[14] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[13] ) is unused and will be removed from module AXI_top.
+WARNING: [Synth 8-3332] Sequential element (\mstr/ARADDR_reg[12] ) is unused and will be removed from module AXI_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 337.668 ; gain = 196.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 337.668 ; gain = 196.277
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 337.668 ; gain = 196.277
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 337.668 ; gain = 196.277
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 337.668 ; gain = 196.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 339.293 ; gain = 197.902
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 339.293 ; gain = 197.902
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 339.293 ; gain = 197.902
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 339.293 ; gain = 197.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |     8|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     8|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 339.293 ; gain = 197.902
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 839 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 339.293 ; gain = 181.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 339.293 ; gain = 197.902
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 204 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:35 . Memory (MB): peak = 373.391 ; gain = 218.125
+# write_checkpoint -noxdef AXI_top.dcp
+# catch { report_utilization -file AXI_top_utilization_synth.rpt -pb AXI_top_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 373.391 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 01 18:25:54 2018...
